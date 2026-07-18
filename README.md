@@ -65,3 +65,9 @@ Harper provides the runtime, interfaces, and execution environment.
 Iter provides the agent.
 
 Together they form a Rust-based platform for AI-assisted software development.
+
+---
+
+## Origin
+
+> Carrier: https://github.com/harpertoken/harper
