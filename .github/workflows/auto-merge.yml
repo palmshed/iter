@@ -41,7 +41,7 @@ jobs:
           permission-contents: write
           permission-pull-requests: write
 
-      - uses: libnudget/auto-merge@v1
+      - uses: coccinella-labs/auto-merge@v1
         with:
           mode: enable
           token: ${{ steps.app-token.outputs.token }}
@@ -63,7 +63,7 @@ jobs:
           private-key: ${{ secrets.HARPER_APP_PRIVATE_KEY }}
           permission-pull-requests: write
 
-      - uses: libnudget/auto-merge@v1
+      - uses: coccinella-labs/auto-merge@v1
         with:
           mode: disable
           token: ${{ steps.app-token.outputs.token }}
@@ -85,7 +85,7 @@ jobs:
           permission-contents: write
           permission-pull-requests: write
 
-      - uses: libnudget/auto-merge@v1
+      - uses: coccinella-labs/auto-merge@v1
         with:
           mode: now
           token: ${{ steps.app-token.outputs.token }}
