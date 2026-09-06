@@ -70,6 +70,6 @@ jobs:
       with:
         components: rustfmt, clippy
     - name: Apply fix
-      uses: libnudget/rust-fix@v1
+      uses: coccinella-labs/rust-fix@v1
       with:
         fixes: all
