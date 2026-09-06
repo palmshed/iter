@@ -20,4 +20,4 @@ jobs:
       github.event.pull_request.user.login != 'app/dependabot'
     runs-on: ubuntu-latest
     steps:
-      - uses: libnudget/prune@v1
+      - uses: coccinella-labs/prune@v1
