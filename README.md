@@ -8,10 +8,10 @@
 
 ## Origin
 
-> Carrier: https://github.com/harpertoken/harper
+> Carrier: https://github.com/coccinella-labs/harper
 
 ## Issues
 
-- https://github.com/harpertoken/harper/issues/347
+- https://github.com/coccinella-labs/harper/issues/347
 - https://github.com/bazelbuild/rules_rust/issues/4006
 
