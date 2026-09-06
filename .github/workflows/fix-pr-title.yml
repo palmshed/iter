@@ -36,6 +36,6 @@ jobs:
           private-key: ${{ secrets.HARPER_APP_PRIVATE_KEY }}
           permission-pull-requests: write
 
-      - uses: libnudget/title@v1
+      - uses: coccinella-labs/title@v1
         with:
           token: ${{ steps.app-token.outputs.token }}
