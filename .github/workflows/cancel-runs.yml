@@ -46,7 +46,7 @@ jobs:
         PR_NUM: ${{ github.event.issue.number }}
 
     - name: Cancel runs
-      uses: libnudget/cancel@v1
+      uses: coccinella-labs/cancel@v1
       with:
         branch: ${{ steps.get-branch.outputs.branch }}
         token: ${{ secrets.GITHUB_TOKEN }}
@@ -71,7 +71,7 @@ jobs:
       actions: write
       pull-requests: write
     steps:
-    - uses: libnudget/cancel@v1
+    - uses: coccinella-labs/cancel@v1
       with:
         pr_number: ${{ github.event.pull_request.number }}
         token: ${{ secrets.GITHUB_TOKEN }}
