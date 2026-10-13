@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT OR Apache-2.0
-# Copyright 2026 harpertoken
+# Copyright 2026 palmshed
 
 name: PR Description
 
@@ -14,10 +14,25 @@ jobs:
   normalize:
     name: PR Description
     if: |
-      github.repository_owner == 'harpertoken' &&
+      github.repository_owner == 'palmshed' &&
       github.event.pull_request.head.repo.fork == false &&
       github.event.pull_request.user.login != 'dependabot[bot]' &&
       github.event.pull_request.user.login != 'app/dependabot'
     runs-on: ubuntu-latest
     steps:
-      - uses: coccinella-labs/prune@v1
+      - name: Validate description against the PR template
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const body = pr.body || '';
+            const missing = ['## Changes', '## Validation'].filter(
+              (heading) => !body.includes(heading),
+            );
+            if (missing.length) {
+              core.setFailed(
+                `${pr.html_url}\n\nDescription is missing template section(s): ` +
+                  `${missing.join(', ')}.\n\nCopy .github/pull_request_template.md ` +
+                  'into the description and fill in both sections.',
+              );
+            }
